@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: **mysql-password**
+      MYSQL_DATABASE: aasservice
+    networks:
+      - clicedipp
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  db_initializer:
+    image: mysql:latest
+    container_name: db_initializer
+    command: >
+      bash -c "
+      for i in `seq 1 30`; do
+        /usr/bin/mysql -hmysql -uroot -p'**mysql-password**' -e 'SELECT 1' && break;
+        echo 'Waiting for mysql...';
+        sleep 1;
+      done;
+      /usr/bin/mysql -hmysql -uroot -p'**mysql-password**' < /docker-entrypoint-initdb.d/init.sql
+      "
+    depends_on:
+      - mysql
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - clicedipp
+
+  backend:
+    image: clicedipp-backend
+    container_name: clicedipp-backend
+    depends_on:
+      - db_initializer
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/aasservice?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: **mysql-password**
+    networks:
+      - clicedipp
+
+  frontend:
+    image: clicedipp-frontend
+    container_name: clicedipp-frontend
+    depends_on:
+      - mysql
+      - db_initializer
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - clicedipp
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: **mysql-password**
+    depends_on:
+      - mysql
+    ports:
+      - "8000:80"
+    networks:
+      - clicedipp
+
+networks:
+  clicedipp:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: localWe
