@@ -1,0 +1,43 @@
+@import './../Colors.css';
+
+
+.navbar-custom {
+    height: 100px;
+    /* Default height */
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--content-border);
+    color: var(--header-text);
+    background-color: var(--header-background);
+}
+
+/* Custom CSS for smaller screens (less than Bootstrap large breakpoint) */
+@media (max-width: 1200px) {
+    .navbar-custom {
+        height: 60px;
+        /* Height for smaller screens */
+    }
+}
+
+.navbar-nav .nav-link {
+    color: var(--header-text);
+    font-size: 21.6px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--header-text-hovern);
+    font-size: 21.6px;
+}
+
+
+.logo-height {
+    height: 80px;
+}
+
+@media (max-width: 1200px) {
+    .logo-height {
+        height: 40px;
+    }
+}
+
+

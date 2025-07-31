@@ -1,0 +1,6 @@
+@import "../../Colors.css";
+
+
+.alert-success{
+    --bs-alert-bg: var(--content-primary-50)
+}

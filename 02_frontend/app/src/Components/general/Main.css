@@ -1,0 +1,89 @@
+@import "./../Colors.css";
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 100px;
+
+}
+
+
+
+/* Custom CSS for smaller screens (less than Bootstrap large breakpoint) */
+@media (max-width: 1200px) {
+  main {
+    padding-top: 60px;
+    /* Height for smaller screens */
+  }
+}
+
+
+.border {
+  border: 1px solid var(--content-border) !important;
+}
+
+
+.list-group {
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 0%;
+
+
+  --bs-list-group-active-color: #fff;
+  --bs-list-group-active-bg: var(--content-primary);
+  --bs-list-group-active-border-color: var(--content-primary);
+
+}
+
+
+.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+.btn-primary {
+  --bs-btn-bg: var(--content-primary);
+  --bs-btn-border-color: var(--content-primary);
+  --bs-btn-hover-bg: var(--content-primary);
+  --bs-btn-hover-border-color: var(--content-primary);
+  --bs-btn-active-bg: var(--content-primary);
+  --bs-btn-active-color: #000;
+  --bs-btn-active-border-color: var(--content-primary)
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: var(--content-primary-75);
+  --bs-btn-disabled-border-color: var(--content-primary-75);
+}
+
+
+.btn-warning {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--content-secondary);
+  --bs-btn-border-color: var(--content-secondary);
+  --bs-btn-hover-bg: var(--content-secondary);
+  --bs-btn-hover-border-color: var(--content-secondary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--content-secondary);
+  --bs-btn-active-color: #000;
+  --bs-btn-active-border-color: var(--content-secondary)
+}
+
+
+a {
+  color: var(--content-link);
+}
+
+a:hover{
+  color: var(--content-primary);
+}
+
+
+.container {
+  max-width: 1800px;
+}
+
+
+

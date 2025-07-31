@@ -1,0 +1,30 @@
+.alert-modal {
+    position: fixed; /* Positions the modal over the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Set a high z-index */
+  }
+  
+  .alert-container {
+    /* Style your alert content here */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .alert-backdrop {
+    /* Style the modal backdrop */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  }
+  

@@ -1,0 +1,7 @@
+@import "./../Colors.css";
+
+
+footer {
+    background-color:  var(--footer-background);
+    color: var(--footer-text);
+}

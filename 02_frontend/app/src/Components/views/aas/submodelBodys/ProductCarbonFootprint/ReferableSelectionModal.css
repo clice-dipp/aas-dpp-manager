@@ -1,0 +1,45 @@
+@import "../../../../Colors.css";
+
+
+
+.info-div {
+  position: fixed; 
+  transform: translate(-50%, -50%);  /* Precise centering */
+  z-index: 9999;
+  background-color: white;  
+  border: 1px solid #a3a2a2;   /* Optional light border */
+  padding: 20px;            /* Add padding for spacing */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  font-size:small;
+} 
+
+
+.list-scroll-container {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.custom-modal-dialog {
+  max-width: 700px;
+}
+
+
+.custom-form-control-search{
+  background-color:var(--third--color);
+}
+
+.custom-form-control-search:focus {
+  background-color: #E5D9F2; /* Customize the selected background color */
+}
+
+
+
+
+
+
+
+
+
+

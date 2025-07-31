@@ -1,0 +1,47 @@
+/* colors.css */
+
+:root {
+  /* Header colors */
+  --header-background: #ffffff;
+  --header-text: #92D050;
+  --header-text-hovern: #EB9E4D;
+  --header-toolbar: #f5f5f5;
+
+
+
+  /* Content colors */
+  --content-background: #ffffff;
+  --content-background-second: #f5f5f5;
+  --content-border: #e8e8e8;
+  --content-headline: #6EC7E6;
+  --content-text: #333333;
+  --content-link: #D442EB;
+  --content-link-hover: #92D050;
+  --content-primary: #92D050;
+  --content-primary-25: rgba(146, 208, 80, 0.25);
+  --content-primary-50: rgba(146, 208, 80, 0.50);
+  --content-primary-75: rgba(146, 208, 80, 0.75);
+  --content-secondary: #6EC7E6;
+  --content-text-disabled: #999999;
+  --content-background-overlay: rgba(0, 0, 0, 0.75);
+
+
+
+  /* Footer colors */
+  --footer-background: #6EC7E6;
+  --footer-background-secondary: #1a1a1a;
+  --footer-border: #333333;
+  --footer-headline: #cccccc;
+  --footer-text: #ffffff;
+  --footer-link: #D442EB;
+  --footer-link-hover: #92D050;
+
+
+
+  --sag-purple-color: #8d3cf7b7;
+  --sag-turquoise-color: #3cc1b6a8;
+  --aas-blue-color: #0028CD;
+  --secondary-color: #D6D4D8;
+  --third--color: #F5EFFF;
+
+}
